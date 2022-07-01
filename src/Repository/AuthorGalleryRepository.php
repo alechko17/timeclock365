@@ -47,6 +47,7 @@ class AuthorGalleryRepository extends ServiceEntityRepository
         }
     }
 
+
     // /**
     //  * @return AuthorGallery[] Returns an array of AuthorGallery objects
     //  */

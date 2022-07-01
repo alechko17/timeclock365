@@ -1,4 +1,16 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+
+    <div>
+        <label for="authors">Authors</label>
+        <select name="author" id="authors">
+            {% for author in authors %}
+                <option value="{{ author.id }}">{{ author.fullName }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    {{ form_row(form.cover) }}
+
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

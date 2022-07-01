@@ -47,6 +47,18 @@ class AuthorRepository extends ServiceEntityRepository
         }
     }
 
+    public function incrementBooksCount($authorId): void
+    {
+        $this
+            ->createQueryBuilder('e')
+            ->update()
+            ->set('e.number_of_books', 'e.number_of_books + 1')
+            ->where('e.id = :id')
+            ->setParameter('id', $authorId)
+            ->getQuery()
+            ->execute();
+    }
+
     // /**
     //  * @return Author[] Returns an array of Author objects
     //  */

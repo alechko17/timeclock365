@@ -10,6 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Author
 {
+
+    public function __construct()
+    {
+        $this->number_of_books = 0;
+    }
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -21,6 +26,11 @@ class Author
      * @ORM\Column(type="string", length=255)
      */
     private $full_name;
+
+    /**
+     * @ORM\Column(type="integer", options={"default" : 0})
+     */
+    private $number_of_books;
 
     public function getId(): ?int
     {
@@ -38,4 +48,17 @@ class Author
 
         return $this;
     }
+
+    public function getNumberOfBooks(): ?int
+    {
+        return $this->number_of_books;
+    }
+
+    public function setNumberOfBooks(string $number_of_books): self
+    {
+        $this->number_of_books = $number_of_books;
+
+        return $this;
+    }
+
 }

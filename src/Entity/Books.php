@@ -5,11 +5,14 @@ namespace App\Entity;
 use App\Repository\BooksRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass=BooksRepository::class)
  */
 class Books
 {
+
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -30,12 +33,14 @@ class Books
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $cover_image;
+    private $coverFilename;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $year_of_publication;
+
+
 
     public function getId(): ?int
     {
@@ -66,14 +71,14 @@ class Books
         return $this;
     }
 
-    public function getCoverImage(): ?string
+    public function getCoverFilename(): ?string
     {
-        return $this->cover_image;
+        return $this->coverFilename;
     }
 
-    public function setCoverImage(?string $cover_image): self
+    public function setCoverFilename(?string $coverFilename): self
     {
-        $this->cover_image = $cover_image;
+        $this->coverFilename = $coverFilename;
 
         return $this;
     }
@@ -89,4 +94,6 @@ class Books
 
         return $this;
     }
+
+
 }

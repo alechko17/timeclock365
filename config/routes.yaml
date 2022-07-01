@@ -1,3 +1,7 @@
 books:
     path:     /books
     controller: App\Controller\BooksController::index
+
+authors:
+    path:     /author
+    controller: App\Controller\AuthorController::index
